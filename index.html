@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWatch Pro - Performance & Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="py-16 text-center bg-white border-b">
+        <h1 class="text-4xl font-extrabold text-gray-900">SmartWatch v3</h1>
+        <p class="mt-4 text-lg text-gray-600">A tecnologia que seu pulso merece.</p>
+    </header>
+
+    <section class="max-w-md mx-auto mt-12 p-8 bg-white shadow-lg rounded-lg border">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Finalizar Compra</h2>
+        
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">CEP</label>
+                <input type="text" id="cep" placeholder="00000-000" class="w-full p-2 border rounded mt-1 outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Cupom de Desconto</label>
+                <input type="text" id="cupom" placeholder="PROMO10" class="w-full p-2 border rounded mt-1 outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div id="resultado" class="p-4 bg-gray-100 rounded text-sm text-gray-700 hidden">
+                </div>
+
+            <button onclick="processarCompra()" class="w-full bg-black text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition">
+                Calcular Total
+            </button>
+        </div>
+    </section>
+
+    <script>
+        function processarCompra() {
+            const cep = document.getElementById('cep').value;
+            const cupom = document.getElementById('cupom').value;
+            const resultado = document.getElementById('resultado');
+            
+            resultado.classList.remove('hidden');
+            
+            // Simulação de lógica de negócio que testaremos
+            if(cep.length < 8) {
+                resultado.innerHTML = "<span class='text-red-500'>CEP Inválido.</span>";
+                return;
+            }
+            
+            let desconto = cupom === "PROMO10" ? "10%" : "0%";
+            resultado.innerHTML = `Frete para ${cep}: R$ 15,00 <br> Desconto Aplicado: ${desconto}`;
+        }
+    </script>
+</body>
+</html>
