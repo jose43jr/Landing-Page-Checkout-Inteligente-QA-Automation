@@ -7,11 +7,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          # Esta linha abaixo força o Cypress a rodar na raiz do repositório
-          project: ./
+          # Usamos o config-file para apontar o caminho exato sem erros
+          config-file: ./cypress.config.js
           browser: chrome
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
