@@ -1,35 +1,30 @@
-describe("Fluxo de Checkout", () => {
+describe("Landing Page Banda Feitosa Jr - Testes de Interface", () => {
   beforeEach(() => {
-    // Carrega o arquivo localmente antes de cada teste
-    cy.visit("./index.html");
+    // Visita a página inicial na raiz do projeto
+    cy.visit(
+      "H:Projetos PessoaisLanding Page com Checkout Inteligente\frontend"
+    );
   });
 
-  it("Deve carregar a página inicial", () => {
-    cy.get("h1").should("be.visible"); // Validação simples de carregamento
+  it("Deve exibir a Hero Section com o nome da banda", () => {
+    cy.get("#hero").should("be.visible");
+    cy.get("h1").contains("Feitosa Jr", { matchCase: false });
   });
 
-  it("Deve aplicar desconto de 10% com o cupom PROMO10", () => {
-    cy.get("#cep").type("01001000");
-    cy.get("#cupom").type("PROMO10");
-    cy.get("button").contains("Calcular").click(); // Melhor usar 'contains' se houver mais de um botão
-
-    cy.get("#resultado")
-      .should("be.visible")
-      .and("contain", "Desconto Aplicado: 10%");
+  it("Deve validar a presença das seções obrigatórias", () => {
+    cy.get("#agenda").should("exist");
+    cy.get("#loja").should("exist");
+    cy.get("#contato").should("exist");
   });
 
-  it("Deve exibir erro para CEP inválido (menos de 8 caracteres)", () => {
-    cy.get("#cep").type("123");
-    cy.get("button").contains("Calcular").click();
-
-    cy.get("#resultado").should("be.visible").and("contain", "CEP Inválido");
+  it("Deve preencher o formulário de contato corretamente", () => {
+    cy.get("#name").type("Fã Teste");
+    cy.get("#email").type("fa@teste.com");
+    cy.get("#message").type("Gostaríamos de um show na nossa cidade!");
+    cy.get("#btn-enviar").should("be.visible");
   });
 
-  it("Deve lidar com caracteres especiais no campo de cupom", () => {
-    cy.get("#cep").type("01001000");
-    cy.get("#cupom").type('<script>alert("hack")</script>');
-    cy.get("button").contains("Calcular").click();
-
-    cy.get("#resultado").should("be.visible").and("not.contain", "<script>");
+  it("Deve validar a existência do seletor de idiomas", () => {
+    cy.get(".lang-selector").should("exist");
   });
 });
