@@ -1,6 +1,6 @@
 describe("Módulo de Checkout - SmartWatch v3", () => {
   beforeEach(() => {
-    cy.visit("index.html"); // Caminho para sua Landing Page
+    cy.visit("http://localhost:8080");
   });
 
   it("Deve aplicar desconto de 10% com o cupom PROMO10", () => {
