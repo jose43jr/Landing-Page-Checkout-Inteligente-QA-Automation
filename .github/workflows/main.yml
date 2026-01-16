@@ -7,18 +7,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install http-server and Dependencies
-        run: |
-          npm install
-          npm install http-server -g
-
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          project: .
-          start: http-server . -p 8080
-          wait-on: "http://localhost:8080"
-          wait-on-timeout: 60
+          # Aqui não usamos 'start' nem 'wait-on' para arquivos estáticos simples
+          browser: chrome
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
