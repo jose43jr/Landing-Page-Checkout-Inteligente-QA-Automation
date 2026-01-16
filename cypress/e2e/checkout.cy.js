@@ -1,9 +1,7 @@
 describe("Landing Page Banda Feitosa Jr - Testes de Interface", () => {
   beforeEach(() => {
     // Visita a página inicial na raiz do projeto
-    cy.visit(
-      "H:Projetos PessoaisLanding Page com Checkout Inteligente\frontend"
-    );
+    cy.visit("./frontend/index.html");
   });
 
   it("Deve exibir a Hero Section com o nome da banda", () => {
