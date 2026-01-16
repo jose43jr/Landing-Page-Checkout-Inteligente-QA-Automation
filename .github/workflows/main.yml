@@ -15,6 +15,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          project: .
           start: http-server . -p 8080
           wait-on: "http://localhost:8080"
           wait-on-timeout: 60
