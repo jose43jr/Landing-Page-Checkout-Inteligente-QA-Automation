@@ -10,7 +10,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          # Aqui não usamos 'start' nem 'wait-on' para arquivos estáticos simples
+          # Esta linha abaixo força o Cypress a rodar na raiz do repositório
+          project: ./
           browser: chrome
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
