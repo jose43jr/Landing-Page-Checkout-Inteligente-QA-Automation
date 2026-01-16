@@ -7,14 +7,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install http-server and Dependencies
+        run: |
+          npm install
+          npm install http-server -g
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npx http-server . -p 8080
+          start: http-server . -p 8080
           wait-on: "http://localhost:8080"
-          browser: chrome
+          wait-on-timeout: 60
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: Notify Discord
+        if: always()
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"Projeto 01: Testes finalizados. Status: ${{ job.status }}\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
