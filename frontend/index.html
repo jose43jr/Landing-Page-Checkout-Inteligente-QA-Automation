@@ -17,6 +17,16 @@
       scroll-behavior: smooth;
     }
 
+    #skeleton-loader {
+      position: fixed;
+      inset: 0;
+      background-color: #0B0D10;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     html {
       scroll-padding-top: 80px;
       /* Offset for fixed header */
@@ -31,6 +41,12 @@
 </head>
 
 <body>
+  <div id="skeleton-loader">
+    <div class="animate-pulse space-y-4 text-center">
+      <div class="h-12 w-48 bg-gray-800 rounded mx-auto"></div>
+      <div class="h-4 w-32 bg-gray-800 rounded mx-auto"></div>
+    </div>
+  </div>
 
   <nav
     class="fixed w-full z-50 bg-black/90 backdrop-blur-md py-4 px-8 flex justify-between items-center border-b border-gray-800">
@@ -50,12 +66,19 @@
   </nav>
 
   <section id="hero"
-    class="h-screen flex flex-col justify-center items-center text-center bg-[url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60">
+    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=2070');"
+    class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat">
     <h1 class="text-6xl md:text-8xl mb-4">Feitosa Jr</h1>
     <p class="text-xl md:text-2xl text-[#E0A458] tracking-widest" data-i18n="hero_subtitle">Rock Pop Gospel. Fé viva.
       Som no máximo.</p>
     <a href="#agenda" data-i18n="hero_cta"
       class="mt-8 bg-[#8C1D18] px-8 py-3 rounded-full hover:scale-105 transition-transform font-bold">Ver Agenda</a>
+  </section>
+
+  <section id="manifesto" class="py-20 bg-[#141821] text-center px-6" data-aos="fade-up">
+    <p class="text-2xl md:text-4xl text-gray-300 italic font-light mb-4" data-i18n="manifesto_text">"Não é só música. É
+      uma experiência de fé."</p>
+    <div class="w-24 h-1 bg-[#8C1D18] mx-auto"></div>
   </section>
 
   <section id="agenda" class="py-20 bg-[#0B0D10] px-6" data-aos="fade-up" data-aos-duration="1000">
@@ -69,14 +92,104 @@
     </div>
   </section>
 
+  <section id="videos" class="py-20 bg-[#0B0D10] px-6" data-aos="fade-up">
+    <h2 class="text-4xl text-center mb-12" data-i18n="video_title">Últimos Vídeos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Video 1 -->
+      <div class="group relative aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer">
+        <div
+          class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+        <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&q=80"
+          class="w-full h-full object-cover opacity-60" alt="Video Thumb">
+      </div>
+      <!-- Video 2 -->
+      <div class="group relative aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer">
+        <div
+          class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80"
+          class="w-full h-full object-cover opacity-60" alt="Video Thumb">
+      </div>
+      <!-- Video 3 -->
+      <div class="group relative aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer">
+        <div
+          class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&q=80"
+          class="w-full h-full object-cover opacity-60" alt="Video Thumb">
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <section id="galeria" class="py-20 bg-[#141821] text-center" data-aos="fade-up">
+    <h2 class="text-4xl mb-12" data-i18n="gallery_title">Galeria</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto px-6">
+      <!-- Images -->
+      <img src="https://images.unsplash.com/photo-1471478331149-c72f17e33c73?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 1">
+      <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 2">
+      <img src="https://images.unsplash.com/photo-1469488865564-c2de10f69f96?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 3">
+      <img src="https://images.unsplash.com/photo-1549488497-6fb8a19de0f0?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 4">
+      <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 5">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800"
+        class="object-cover w-full h-64 rounded-lg hover:scale-105 transition duration-500 cursor-pointer"
+        alt="Gallery 6">
+    </div>
+  </section>
+
   <section id="loja" class="py-20 bg-[#141821] text-center" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-4xl mb-12" data-i18n="store_title">Loja Oficial</h2>
     <div
-      class="max-w-md mx-auto bg-black/40 p-8 rounded-lg border border-gray-800 hover:shadow-[0_0_25px_rgba(201,162,77,0.5)] transition-all duration-300">
-      <h3 class="text-xl mb-4" data-i18n="store_product">CD Memórias</h3>
-      <p class="text-[#C9A24D] mb-6 font-bold" data-i18n="store_price">R$ 39,90</p>
+      class="max-w-md mx-auto bg-black/40 p-8 rounded-lg border border-gray-800 hover:shadow-[0_0_25px_rgba(201,162,77,0.5)] transition-all duration-300 group relative overflow-hidden">
 
-      <div class="space-y-4">
+      <!-- Quick View Overlay -->
+      <div
+        class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+        <button class="bg-[#C9A24D] text-black px-6 py-2 font-bold rounded-full hover:scale-105 transition-transform"
+          data-i18n="store_quick_view">Espiada Rápida</button>
+      </div>
+
+      <div class="h-48 bg-gray-800 mb-4 rounded overflow-hidden">
+        <div class="h-48 bg-gray-800 mb-4 rounded overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="CD">
+        </div>
+      </div>
+
+      <h3 class="text-xl mb-4 relative z-0" data-i18n="store_product">CD Memórias</h3>
+      <p class="text-[#C9A24D] mb-6 font-bold relative z-0" data-i18n="store_price">R$ 39,90</p>
+
+      <div class="space-y-4 relative z-20">
         <input type="text" id="cep" placeholder="CEP (00000-000)"
           class="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white">
         <input type="text" id="cupom" placeholder="CUPOM (FEITOSA10)"
@@ -113,12 +226,16 @@
         nav_contact: "Contato",
         hero_subtitle: "Rock Pop Gospel. Fé viva. Som no máximo.",
         hero_cta: "Ver Agenda",
+        manifesto_text: "\"Não é só música. É uma experiência de fé.\"",
+        video_title: "Últimos Vídeos",
+        gallery_title: "Galeria",
         agenda_title: "Agenda de Shows",
         agenda_date: "25 JAN - São Paulo, BR",
         agenda_tickets: "Ingressos",
         store_title: "Loja Oficial",
         store_product: "CD Memórias",
         store_price: "R$ 39,90",
+        store_quick_view: "Espiada Rápida",
         store_calc_btn: "Calcular Total",
         contact_title: "Contato & Booking",
         contact_name_ph: "Nome",
@@ -137,12 +254,16 @@
         nav_contact: "Contact",
         hero_subtitle: "Rock Pop Gospel. Living Faith. Max Volume.",
         hero_cta: "See Schedule",
+        manifesto_text: "\"It's not just music. It's a faith experience.\"",
+        video_title: "Latest Videos",
+        gallery_title: "Gallery",
         agenda_title: "Tour Dates",
         agenda_date: "JAN 25 - Sao Paulo, BR",
         agenda_tickets: "Tickets",
         store_title: "Official Store",
         store_product: "Memories CD",
         store_price: "$ 10.00",
+        store_quick_view: "Quick View",
         store_calc_btn: "Calculate Total",
         contact_title: "Contact & Booking",
         contact_name_ph: "Name",
@@ -202,6 +323,11 @@
 
     // Back to Top Logic
     document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => {
+        const loader = document.getElementById('skeleton-loader');
+        if (loader) loader.style.display = 'none';
+      }, 1500);
+
       const btnTop = document.getElementById('btn-top');
       if (btnTop) {
         window.addEventListener('scroll', function () {
