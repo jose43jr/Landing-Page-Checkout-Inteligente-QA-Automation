@@ -36,42 +36,45 @@
     class="fixed w-full z-50 bg-black/90 backdrop-blur-md py-4 px-8 flex justify-between items-center border-b border-gray-800">
     <div class="text-2xl font-bold text-[#C9A24D]">FEITOSA JR</div>
     <div class="hidden md:flex space-x-8 text-sm font-medium">
-      <a href="#hero" class="hover:text-[#C9A24D] transition">Início</a>
-      <a href="#agenda" class="hover:text-[#C9A24D] transition">Agenda</a>
-      <a href="#loja" class="hover:text-[#C9A24D] transition">Loja</a>
-      <a href="#contato" class="hover:text-[#C9A24D] transition">Contato</a>
+      <a href="#hero" class="hover:text-[#C9A24D] transition" data-i18n="nav_home">Início</a>
+      <a href="#agenda" class="hover:text-[#C9A24D] transition" data-i18n="nav_agenda">Agenda</a>
+      <a href="#loja" class="hover:text-[#C9A24D] transition" data-i18n="nav_store">Loja</a>
+      <a href="#contato" class="hover:text-[#C9A24D] transition" data-i18n="nav_contact">Contato</a>
     </div>
     <div class="lang-selector space-x-4">
-      <button data-lang="pt" class="text-sm text-[#C9A24D]">PT</button>
-      <button data-lang="en" class="text-sm hover:text-orange-400">EN</button>
+      <button onclick="switchLanguage('pt')"
+        class="text-sm text-[#C9A24D] hover:text-white transition cursor-pointer font-bold">PT</button>
+      <button onclick="switchLanguage('en')"
+        class="text-sm text-[#C9A24D] hover:text-white transition cursor-pointer font-bold">EN</button>
     </div>
   </nav>
 
   <section id="hero"
     class="h-screen flex flex-col justify-center items-center text-center bg-[url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60">
     <h1 class="text-6xl md:text-8xl mb-4">Feitosa Jr</h1>
-    <p class="text-xl md:text-2xl text-[#E0A458] tracking-widest">Rock Pop Gospel. Fé viva. Som no máximo.</p>
-    <a href="#agenda"
+    <p class="text-xl md:text-2xl text-[#E0A458] tracking-widest" data-i18n="hero_subtitle">Rock Pop Gospel. Fé viva.
+      Som no máximo.</p>
+    <a href="#agenda" data-i18n="hero_cta"
       class="mt-8 bg-[#8C1D18] px-8 py-3 rounded-full hover:scale-105 transition-transform font-bold">Ver Agenda</a>
   </section>
 
   <section id="agenda" class="py-20 bg-[#0B0D10] px-6" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="text-4xl text-center mb-12">Agenda de Shows</h2>
+    <h2 class="text-4xl text-center mb-12" data-i18n="agenda_title">Agenda de Shows</h2>
     <div class="max-w-4xl mx-auto border-t border-gray-800">
       <div class="flex justify-between py-6 border-b border-gray-800">
-        <span>25 JAN - São Paulo, BR</span>
-        <button
+        <span data-i18n="agenda_date">25 JAN - São Paulo, BR</span>
+        <button data-i18n="agenda_tickets"
           class="text-[#C9A24D] border border-[#C9A24D] px-4 py-1 hover:bg-[#C9A24D] hover:text-black transition">Ingressos</button>
       </div>
     </div>
   </section>
 
   <section id="loja" class="py-20 bg-[#141821] text-center" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="text-4xl mb-12">Loja Oficial</h2>
+    <h2 class="text-4xl mb-12" data-i18n="store_title">Loja Oficial</h2>
     <div
       class="max-w-md mx-auto bg-black/40 p-8 rounded-lg border border-gray-800 hover:shadow-[0_0_25px_rgba(201,162,77,0.5)] transition-all duration-300">
-      <h3 class="text-xl mb-4">CD Memórias</h3>
-      <p class="text-[#C9A24D] mb-6 font-bold">R$ 39,90</p>
+      <h3 class="text-xl mb-4" data-i18n="store_product">CD Memórias</h3>
+      <p class="text-[#C9A24D] mb-6 font-bold" data-i18n="store_price">R$ 39,90</p>
 
       <div class="space-y-4">
         <input type="text" id="cep" placeholder="CEP (00000-000)"
@@ -79,7 +82,7 @@
         <input type="text" id="cupom" placeholder="CUPOM (FEITOSA10)"
           class="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white">
         <div id="resultado" class="hidden p-3 bg-gray-800 rounded text-sm text-left"></div>
-        <button onclick="calcularPedido()"
+        <button onclick="calcularPedido()" data-i18n="store_calc_btn"
           class="w-full bg-[#C9A24D] px-6 py-2 text-black font-bold hover:bg-yellow-600 transition-all duration-300 hover:scale-105">Calcular
           Total</button>
       </div>
@@ -87,19 +90,94 @@
   </section>
 
   <section id="contato" class="py-20 bg-[#0B0D10] px-6">
-    <h2 class="text-4xl text-center mb-12">Contato & Booking</h2>
+    <h2 class="text-4xl text-center mb-12" data-i18n="contact_title">Contato & Booking</h2>
     <form id="contact-form" class="max-w-lg mx-auto space-y-4">
-      <input type="text" id="name" placeholder="Nome" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
-      <input type="email" id="email" placeholder="E-mail" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
-      <textarea id="message" placeholder="Sua Mensagem"
+      <input type="text" id="name" placeholder="Nome" data-i18n-placeholder="contact_name_ph"
+        class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
+      <input type="email" id="email" placeholder="E-mail" data-i18n-placeholder="contact_email_ph"
+        class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
+      <textarea id="message" placeholder="Sua Mensagem" data-i18n-placeholder="contact_msg_ph"
         class="w-full p-3 bg-gray-900 border border-gray-700 h-32 rounded"></textarea>
-      <button type="button" id="btn-enviar"
+      <button type="button" id="btn-enviar" data-i18n="contact_btn"
         class="w-full bg-[#8C1D18] py-3 font-bold hover:bg-red-700 transition-all duration-300 hover:scale-105">Solicitar
         Show</button>
     </form>
   </section>
 
   <script>
+    const translations = {
+      pt: {
+        nav_home: "Início",
+        nav_agenda: "Agenda",
+        nav_store: "Loja",
+        nav_contact: "Contato",
+        hero_subtitle: "Rock Pop Gospel. Fé viva. Som no máximo.",
+        hero_cta: "Ver Agenda",
+        agenda_title: "Agenda de Shows",
+        agenda_date: "25 JAN - São Paulo, BR",
+        agenda_tickets: "Ingressos",
+        store_title: "Loja Oficial",
+        store_product: "CD Memórias",
+        store_price: "R$ 39,90",
+        store_calc_btn: "Calcular Total",
+        contact_title: "Contato & Booking",
+        contact_name_ph: "Nome",
+        contact_email_ph: "E-mail",
+        contact_msg_ph: "Sua Mensagem",
+        contact_btn: "Solicitar Show",
+        calc_cep_error: "CEP Inválido.",
+        calc_freight: "Frete",
+        calc_discount: "Desconto",
+        calc_total: "Total"
+      },
+      en: {
+        nav_home: "Home",
+        nav_agenda: "Schedule",
+        nav_store: "Store",
+        nav_contact: "Contact",
+        hero_subtitle: "Rock Pop Gospel. Living Faith. Max Volume.",
+        hero_cta: "See Schedule",
+        agenda_title: "Tour Dates",
+        agenda_date: "JAN 25 - Sao Paulo, BR",
+        agenda_tickets: "Tickets",
+        store_title: "Official Store",
+        store_product: "Memories CD",
+        store_price: "$ 10.00",
+        store_calc_btn: "Calculate Total",
+        contact_title: "Contact & Booking",
+        contact_name_ph: "Name",
+        contact_email_ph: "E-mail",
+        contact_msg_ph: "Your Message",
+        contact_btn: "Request Show",
+        calc_cep_error: "Invalid ZIP.",
+        calc_freight: "Shipping",
+        calc_discount: "Discount",
+        calc_total: "Total"
+      }
+    };
+
+    let currentLang = 'pt';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const elements = document.querySelectorAll('[data-i18n]');
+      const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+
+      placeholders.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+    }
+
     function calcularPedido() {
       const cep = document.getElementById('cep').value;
       const cupom = document.getElementById('cupom').value;
@@ -107,12 +185,19 @@
       resultado.classList.remove('hidden');
 
       if (cep.length < 8) {
-        resultado.innerHTML = "<span class='text-red-500'>CEP Inválido.</span>";
+        resultado.innerHTML = `<span class='text-red-500'>${translations[currentLang].calc_cep_error}</span>`;
         return;
       }
 
       let desconto = cupom === "FEITOSA10" ? "10%" : "0%";
-      resultado.innerHTML = `Frete: R$ 15,00 <br> Desconto: ${desconto} <br> <strong>Total: R$ ${cupom === "FEITOSA10" ? '50,91' : '54,90'}</strong>`;
+      let frete = currentLang === 'pt' ? 'R$ 15,00' : '$ 3.00';
+      let total = cupom === "FEITOSA10"
+        ? (currentLang === 'pt' ? '50,91' : '11.70')
+        : (currentLang === 'pt' ? '54,90' : '13.00');
+      let currency = currentLang === 'pt' ? 'R$' : '$';
+
+      // Keep simplified logic for demonstration, adjusting structure slightly to support simple translation without heavy logic rewrite
+      resultado.innerHTML = `${translations[currentLang].calc_freight}: ${frete} <br> ${translations[currentLang].calc_discount}: ${desconto} <br> <strong>${translations[currentLang].calc_total}: ${currency} ${total}</strong>`;
     }
 
     // Back to Top Logic
