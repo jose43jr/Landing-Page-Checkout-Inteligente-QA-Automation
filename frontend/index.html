@@ -116,19 +116,23 @@
     }
 
     // Back to Top Logic
-    const btnTop = document.getElementById('btn-top');
-    window.onscroll = function () {
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        btnTop.classList.remove('opacity-0', 'pointer-events-none');
-        btnTop.classList.add('opacity-100', 'pointer-events-auto');
-      } else {
-        btnTop.classList.remove('opacity-100', 'pointer-events-auto');
-        btnTop.classList.add('opacity-0', 'pointer-events-none');
-      }
-    };
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnTop = document.getElementById('btn-top');
+      if (btnTop) {
+        window.addEventListener('scroll', function () {
+          if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            btnTop.classList.remove('opacity-0', 'pointer-events-none');
+            btnTop.classList.add('opacity-100', 'pointer-events-auto');
+          } else {
+            btnTop.classList.remove('opacity-100', 'pointer-events-auto');
+            btnTop.classList.add('opacity-0', 'pointer-events-none');
+          }
+        });
 
-    btnTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+        btnTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
     });
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
