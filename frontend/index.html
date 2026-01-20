@@ -1,114 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feitosa Jr | Rock Pop Gospel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@700&display=swap");
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #0b0d10;
-        color: #f5f6f8;
-        scroll-behavior: smooth;
-      }
-      h1,
-      h2 {
-        font-family: "Oswald", sans-serif;
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <nav
-      class="fixed w-full z-50 bg-black/80 backdrop-blur-md py-4 px-8 flex justify-between items-center"
-    >
-      <div class="text-2xl font-bold text-softGold">FEITOSA JR</div>
-      <div class="lang-selector space-x-4">
-        <button data-lang="pt" class="text-sm hover:text-orange-400">PT</button>
-        <button data-lang="en" class="text-sm hover:text-orange-400">EN</button>
-      </div>
-    </nav>
 
-    <section
-      id="hero"
-      class="h-screen flex flex-col justify-center items-center text-center bg-[url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60"
-    >
-      <h1 class="text-6xl md:text-8xl mb-4 text-[#F5F6F8]">Feitosa Jr</h1>
-      <p class="text-xl md:text-2xl text-[#E0A458] tracking-widest">
-        Rock Pop Gospel. Fé viva. Som no máximo.
-      </p>
-      <a
-        href="#agenda"
-        class="mt-8 bg-[#8C1D18] px-8 py-3 rounded-full hover:scale-105 transition-transform"
-        >Ver Agenda</a
-      >
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feitosa Jr | Rock Pop Gospel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@700&display=swap');
 
-    <section id="manifesto" class="py-20 px-10 text-center bg-[#141821]">
-      <h2 class="text-3xl mb-6">Não é só música. É mensagem.</h2>
-      <p class="max-w-2xl mx-auto text-gray-400 italic">
-        "Tudo o que tem fôlego louve ao Senhor." - Salmos 150
-      </p>
-    </section>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0B0D10;
+      color: #F5F6F8;
+      scroll-behavior: smooth;
+    }
 
-    <section id="agenda" class="py-20 bg-[#0B0D10] px-6">
-      <h2 class="text-4xl text-center mb-12">Agenda de Shows</h2>
-      <div class="max-w-4xl mx-auto border-t border-gray-800">
-        <div class="flex justify-between py-6 border-b border-gray-800">
-          <span>25 JAN - São Paulo, BR</span>
-          <button class="text-[#C9A24D] border border-[#C9A24D] px-4 py-1">
-            Ingressos
-          </button>
-        </div>
-      </div>
-    </section>
+    h1,
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
 
-    <section id="loja" class="py-20 bg-[#0F1A2B] text-center">
-      <h2 class="text-4xl mb-12">Loja Oficial</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
-        <div class="bg-black/40 p-6 rounded-lg">
-          <div class="h-48 bg-gray-800 mb-4 rounded"></div>
-          <h3 class="text-xl mb-2">CD Memórias</h3>
-          <p class="text-softGold mb-4">R$ 39,90</p>
-          <button
-            class="btn-comprar bg-[#C9A24D] px-6 py-2 text-black font-bold"
-          >
-            Comprar
-          </button>
-        </div>
-      </div>
-    </section>
+<body>
 
-    <section id="contato" class="py-20 bg-[#0B0D10] px-6">
-      <h2 class="text-4xl text-center mb-12">Contato & Booking</h2>
-      <form id="contact-form" class="max-w-lg mx-auto space-y-4">
-        <input
-          type="text"
-          id="name"
-          placeholder="Nome"
-          class="w-full p-3 bg-gray-900 border border-gray-700 rounded"
-        />
-        <input
-          type="email"
-          id="email"
-          placeholder="E-mail"
-          class="w-full p-3 bg-gray-900 border border-gray-700 rounded"
-        />
-        <textarea
-          id="message"
-          placeholder="Sua Mensagem"
-          class="w-full p-3 bg-gray-900 border border-gray-700 h-32 rounded"
-        ></textarea>
+  <nav
+    class="fixed w-full z-50 bg-black/90 backdrop-blur-md py-4 px-8 flex justify-between items-center border-b border-gray-800">
+    <div class="text-2xl font-bold text-[#C9A24D]">FEITOSA JR</div>
+    <div class="hidden md:flex space-x-8 text-sm font-medium">
+      <a href="#hero" class="hover:text-[#C9A24D] transition">Início</a>
+      <a href="#agenda" class="hover:text-[#C9A24D] transition">Agenda</a>
+      <a href="#loja" class="hover:text-[#C9A24D] transition">Loja</a>
+      <a href="#contato" class="hover:text-[#C9A24D] transition">Contato</a>
+    </div>
+    <div class="lang-selector space-x-4">
+      <button data-lang="pt" class="text-sm text-[#C9A24D]">PT</button>
+      <button data-lang="en" class="text-sm hover:text-orange-400">EN</button>
+    </div>
+  </nav>
+
+  <section id="hero"
+    class="h-screen flex flex-col justify-center items-center text-center bg-[url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/60">
+    <h1 class="text-6xl md:text-8xl mb-4">Feitosa Jr</h1>
+    <p class="text-xl md:text-2xl text-[#E0A458] tracking-widest">Rock Pop Gospel. Fé viva. Som no máximo.</p>
+    <a href="#agenda"
+      class="mt-8 bg-[#8C1D18] px-8 py-3 rounded-full hover:scale-105 transition-transform font-bold">Ver Agenda</a>
+  </section>
+
+  <section id="agenda" class="py-20 bg-[#0B0D10] px-6">
+    <h2 class="text-4xl text-center mb-12">Agenda de Shows</h2>
+    <div class="max-w-4xl mx-auto border-t border-gray-800">
+      <div class="flex justify-between py-6 border-b border-gray-800">
+        <span>25 JAN - São Paulo, BR</span>
         <button
-          type="button"
-          id="btn-enviar"
-          class="w-full bg-[#8C1D18] py-3 font-bold"
-        >
-          Solicitar Show
-        </button>
-      </form>
-    </section>
-  </body>
+          class="text-[#C9A24D] border border-[#C9A24D] px-4 py-1 hover:bg-[#C9A24D] hover:text-black transition">Ingressos</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="loja" class="py-20 bg-[#141821] text-center">
+    <h2 class="text-4xl mb-12">Loja Oficial</h2>
+    <div class="max-w-md mx-auto bg-black/40 p-8 rounded-lg border border-gray-800">
+      <h3 class="text-xl mb-4">CD Memórias</h3>
+      <p class="text-[#C9A24D] mb-6 font-bold">R$ 39,90</p>
+
+      <div class="space-y-4">
+        <input type="text" id="cep" placeholder="CEP (00000-000)"
+          class="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white">
+        <input type="text" id="cupom" placeholder="CUPOM (FEITOSA10)"
+          class="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white">
+        <div id="resultado" class="hidden p-3 bg-gray-800 rounded text-sm text-left"></div>
+        <button onclick="calcularPedido()"
+          class="w-full bg-[#C9A24D] px-6 py-2 text-black font-bold hover:bg-yellow-600 transition">Calcular
+          Total</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="py-20 bg-[#0B0D10] px-6">
+    <h2 class="text-4xl text-center mb-12">Contato & Booking</h2>
+    <form id="contact-form" class="max-w-lg mx-auto space-y-4">
+      <input type="text" id="name" placeholder="Nome" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
+      <input type="email" id="email" placeholder="E-mail" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
+      <textarea id="message" placeholder="Sua Mensagem"
+        class="w-full p-3 bg-gray-900 border border-gray-700 h-32 rounded"></textarea>
+      <button type="button" id="btn-enviar"
+        class="w-full bg-[#8C1D18] py-3 font-bold hover:bg-red-700 transition">Solicitar Show</button>
+    </form>
+  </section>
+
+  <script>
+    function calcularPedido() {
+      const cep = document.getElementById('cep').value;
+      const cupom = document.getElementById('cupom').value;
+      const resultado = document.getElementById('resultado');
+      resultado.classList.remove('hidden');
+
+      if (cep.length < 8) {
+        resultado.innerHTML = "<span class='text-red-500'>CEP Inválido.</span>";
+        return;
+      }
+
+      let desconto = cupom === "FEITOSA10" ? "10%" : "0%";
+      resultado.innerHTML = `Frete: R$ 15,00 <br> Desconto: ${desconto} <br> <strong>Total: R$ ${cupom === "FEITOSA10" ? '50,91' : '54,90'}</strong>`;
+    }
+  </script>
+</body>
+
 </html>
